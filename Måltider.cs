@@ -8,23 +8,40 @@ namespace kaloriräknarapp
 {
     public class Måltider
     {
-        private Maträtt maträtt;
+        private string namn { get; set; }
         private int Totalkal { get; set; }
-        public Måltider(Maträtt maträtt) { 
+
+        private List<Maträtt> maträtter = new List<Maträtt>();
+        
+        public Måltider(string namn, Maträtt mat) { 
            
-            this.maträtt = maträtt;
-            Totalkal = Totalkal;
+            
+            //Totalkal = 0;
+            this.namn = namn;
+            maträtter.Add(mat);
+
 
         }
-        public string GetMat() { return maträtt.GetNamn(); }
+        public string GetMat()
+        {
+            foreach (Maträtt mat in maträtter)
+            {
+                return (mat.GetNamn());
+            }
+            return null;
+        }
 
         public int GetTotalkal() { return Totalkal; }
 
         //public void SetMat(string mat) { maträtt = mat; }
 
         public int RäknaKalorier() {
-            Totalkal = Totalkal + maträtt.GetKalorier();
-            Console.WriteLine("Totala kalorier: " + Totalkal);
+            foreach (Maträtt mat in maträtter)
+            {
+                Totalkal = Totalkal + mat.GetKalorier();
+                Console.WriteLine("Totala kalorier: " + Totalkal);
+                
+            }
             return Totalkal;
         }
 

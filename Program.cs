@@ -9,8 +9,12 @@
             Maträtt mat3 = new Maträtt("Pasta", 300);
             Maträtt mat4 = new Maträtt("Kött", 400);
 
-            Måltider måltider = new Måltider(mat1);
-            Console.WriteLine(måltider.RäknaKalorier());
+            Måltider måltider1 = new Måltider("frukost",mat1);
+
+
+            Console.WriteLine(måltider1.GetMat());
+            måltider1.RäknaKalorier();
+            
         }
     }
 }
