@@ -9,9 +9,11 @@ namespace kaloriräknarapp
     public class Måltider
     {
         private string namn { get; set; }
-        private int Totalkal { get; set; }
+        public int Totalkal { get; set; }
 
         private List<Maträtt> maträtter = new List<Maträtt>();
+
+        
         
         public Måltider(string namn, Maträtt mat) { 
            
@@ -26,7 +28,8 @@ namespace kaloriräknarapp
         {
             foreach (Maträtt mat in maträtter)
             {
-                return (mat.GetNamn());
+                return ("Mat: " + mat.GetNamn() + " Kalorier: " + mat.GetKalorier());
+                
             }
             return null;
         }

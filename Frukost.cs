@@ -6,7 +6,11 @@ using System.Threading.Tasks;
 
 namespace kaloriräknarapp
 {
-    internal class Frukost
+    internal class Frukost:Måltider
     {
+        public Frukost(string namn, Maträtt mat) : base(namn, mat)
+        {
+            
+        }
     }
 }
