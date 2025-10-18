@@ -40,9 +40,6 @@ namespace kaloriräknarapp
             Console.WriteLine("Du har lagt till " + M.namn + " i " + namn);
         }
 
-        public int GetTotalkal() { return Totalkal; }
-
-        //public void SetMat(string mat) { maträtt = mat; }
 
         public void RäknaKalorier() {
             foreach (Maträtt mat in maträtter)
