@@ -8,30 +8,26 @@ namespace kaloriräknarapp
 {
     public class Måltider
     {
-        private string namn { get; set; }
+        public string namn { get; set; }
         public int Totalkal { get; set; }
 
-        private List<Maträtt> maträtter = new List<Maträtt>();
+        public List<Maträtt> maträtter = new List<Maträtt>();
 
-        
-        
         public Måltider(string namn, Maträtt mat) { 
            
-            
-            
             this.namn = namn;
             maträtter.Add(mat);
-
-
+        }
+        public Måltider()
+        {
+            
         }
         public void GetMat()
         {
             foreach (Maträtt mat in maträtter)
             {
-
                 Console.WriteLine(mat.namn);
             }
-            
         }
 
         public void AddMat(Maträtt M)
@@ -40,8 +36,8 @@ namespace kaloriräknarapp
             Console.WriteLine("Du har lagt till " + M.namn + " i " + namn);
         }
 
-
         public void RäknaKalorier() {
+
             foreach (Maträtt mat in maträtter)
             {
                 Totalkal = Totalkal + mat.kalorier;

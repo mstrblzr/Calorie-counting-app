@@ -14,12 +14,17 @@
             Måltider måltider3 = new Måltider("middag", mat4);
             Måltider måltider4 = new Måltider("mellanmål", mat2);
 
+            Serialiserare<Måltider> serie = new Serialiserare<Måltider>("test.xml");
             måltider1.AddMat(mat3);
 
 
             måltider1.GetMat();
 
             måltider1.RäknaKalorier();
+
+            
+
+            serie.Serialisera(måltider1);
 
 
 

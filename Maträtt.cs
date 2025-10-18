@@ -15,13 +15,10 @@ namespace kaloriräknarapp
             this.namn = namn;
             this.kalorier = kalorier;
         }
-        //public int GetKalorier()
-        //{
-        //    return kalorier;
-        //}
-        //public string GetNamn()
-        //{
-        //    return namn;
-        //}
+        public Maträtt()
+        {
+
+        }
+       
     }
 }
