@@ -28,7 +28,12 @@ namespace kaloriräknarapp
         {
             foreach (Maträtt mat in maträtter)
             {
-                return (mat.GetNamn());
+
+                Console.WriteLine(mat.namn);
+
+                return ("Mat: " + mat.namn() + " Kalorier: " + mat.GetKalorier());
+                
+
             }
             
         }
