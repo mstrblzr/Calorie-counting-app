@@ -11,9 +11,13 @@
 
             Måltider måltider1 = new Måltider("frukost",mat1);
 
+            måltider1.AddMat(mat3);
 
-            Console.WriteLine(måltider1.GetMat());
+            måltider1.GetMat();
+            
             måltider1.RäknaKalorier();
+
+            
             
         }
     }

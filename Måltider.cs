@@ -16,33 +16,37 @@ namespace kaloriräknarapp
         public Måltider(string namn, Maträtt mat) { 
            
             
-            //Totalkal = 0;
+            
             this.namn = namn;
             maträtter.Add(mat);
 
 
         }
-        public string GetMat()
+        public void GetMat()
         {
             foreach (Maträtt mat in maträtter)
             {
-                return (mat.GetNamn());
+                Console.WriteLine(mat.namn);
             }
-            return null;
+            
+        }
+
+        public void AddMat(Maträtt M)
+        {
+            maträtter.Add(M);
+            Console.WriteLine("Du har lagt till " + M.namn + " i " + namn);
         }
 
         public int GetTotalkal() { return Totalkal; }
 
         //public void SetMat(string mat) { maträtt = mat; }
 
-        public int RäknaKalorier() {
+        public void RäknaKalorier() {
             foreach (Maträtt mat in maträtter)
             {
-                Totalkal = Totalkal + mat.GetKalorier();
-                Console.WriteLine("Totala kalorier: " + Totalkal);
-                
+                Totalkal = Totalkal + mat.kalorier;
             }
-            return Totalkal;
+             Console.WriteLine("Totala kalorier: " + Totalkal);
         }
 
     }
