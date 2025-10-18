@@ -30,10 +30,6 @@ namespace kaloriräknarapp
             {
 
                 Console.WriteLine(mat.namn);
-
-                return ("Mat: " + mat.namn() + " Kalorier: " + mat.GetKalorier());
-                
-
             }
             
         }
