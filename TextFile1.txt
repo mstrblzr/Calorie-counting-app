@@ -1,0 +1,3 @@
+﻿Ideer:
+
+Använd event för att känna av när måltider uppdateras och automatiskt uppdatera dag

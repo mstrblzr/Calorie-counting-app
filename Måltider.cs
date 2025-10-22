@@ -10,24 +10,28 @@ namespace kaloriräknarapp
     {
         public string namn { get; set; }
         public int Totalkal { get; set; }
+        
 
         public List<Maträtt> maträtter = new List<Maträtt>();
 
-        public Måltider(string namn, Maträtt mat) { 
+        public Måltider(string namn) { 
            
             this.namn = namn;
-            maträtter.Add(mat);
+            
+            //maträtter.Add(mat);
         }
         public Måltider()
         {
             
         }
-        public void GetMat()
+        public string GetMat()
         {
             foreach (Maträtt mat in maträtter)
             {
-                Console.WriteLine(mat.namn);
+                //Console.WriteLine(mat.namn);
+                return mat.namn;
             }
+            return default;
         }
 
         public void AddMat(Maträtt M)
@@ -36,13 +40,14 @@ namespace kaloriräknarapp
             Console.WriteLine("Du har lagt till " + M.namn + " i " + namn);
         }
 
-        public void RäknaKalorier() {
+        public string RäknaKalorier() {
 
             foreach (Maträtt mat in maträtter)
             {
                 Totalkal = Totalkal + mat.kalorier;
             }
-             Console.WriteLine("Totala kalorier: " + Totalkal);
+            return "Totala kalorier: " + Totalkal;
+             //Console.WriteLine("Totala kalorier: " + Totalkal);
         }
 
     }

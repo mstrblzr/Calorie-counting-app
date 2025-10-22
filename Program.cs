@@ -1,4 +1,6 @@
-﻿namespace kaloriräknarapp
+﻿using System;
+
+namespace kaloriräknarapp
 {
     internal class Program
     {
@@ -9,22 +11,35 @@
             Maträtt mat3 = new Maträtt("Pasta", 300);
             Maträtt mat4 = new Maträtt("Kött", 400);
 
-            Måltider måltider1 = new Måltider("frukost", mat1);
-            Måltider måltider2 = new Måltider("lunch", mat3);
-            Måltider måltider3 = new Måltider("middag", mat4);
-            Måltider måltider4 = new Måltider("mellanmål", mat2);
+            Måltider måltider1 = new Måltider("frukost");
+            Måltider måltider2 = new Måltider("lunch");
+            Måltider måltider3 = new Måltider("middag");
+            Måltider måltider4 = new Måltider("mellanmål");
 
-            Serialiserare<Måltider> serie = new Serialiserare<Måltider>("test.xml");
-            måltider1.AddMat(mat3);
+            List<Måltider> allamåltider = new List<Måltider>();
+
+            allamåltider.Add(måltider1);
+            allamåltider.Add(måltider2);
+            allamåltider.Add(måltider3);
+            allamåltider.Add(måltider4);
 
 
-            måltider1.GetMat();
-
-            måltider1.RäknaKalorier();
+            Dag idag = new Dag(allamåltider);
 
             
+            List<Dag> alladagar = new List<Dag>();
 
-            serie.Serialisera(måltider1);
+
+            alladagar.Add(idag);
+
+
+            måltider1.AddMat(mat1);
+            Serialiserare<List<Dag>> serie = new Serialiserare<List<Dag>>("dagar.xml");
+            serie.Serialisera(alladagar);
+
+
+
+            idag.SkrivUtLista();
 
 
 
