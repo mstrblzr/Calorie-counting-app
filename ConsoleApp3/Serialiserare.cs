@@ -5,7 +5,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Xml.Serialization;
 
-namespace kaloriräknarapp
+
+namespace PresentationLayer
 {
     internal class Serialiserare<T>
     {
@@ -23,6 +24,16 @@ namespace kaloriräknarapp
             using (FileStream ström = new FileStream(Path, FileMode.Create, FileAccess.Write))
             {
                 serie.Serialize(ström, t);
+            }
+        }
+
+        public T DeSerialisera()
+        {
+            XmlSerializer serie = new XmlSerializer(typeof(T));
+
+            using (FileStream ström = new FileStream(Path, FileMode.Open, FileAccess.Read))
+            {
+                return (T)serie.Deserialize(ström);
             }
         }
     }

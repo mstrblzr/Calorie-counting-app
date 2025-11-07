@@ -4,23 +4,25 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace kaloriräknarapp
+namespace PresentationLayer
 {
-    public class Måltider
+    public class Måltid
     {
-        public string namn { get; set; }
+        public int Id { get; set; }
+        public string Namn { get; set; }
         public int Totalkal { get; set; }
         
 
         public List<Maträtt> maträtter = new List<Maträtt>();
 
-        public Måltider(string namn) { 
-           
-            this.namn = namn;
+        public Måltid(int id, string namn) {
+
+            this.Id = id;
+            this.Namn = namn;
             
             //maträtter.Add(mat);
         }
-        public Måltider()
+        public Måltid()
         {
             
         }
@@ -28,8 +30,8 @@ namespace kaloriräknarapp
         {
             foreach (Maträtt mat in maträtter)
             {
-                //Console.WriteLine(mat.namn);
-                return mat.namn;
+                //Console.WriteLine(mat.Namn);
+                return mat.Namn;
             }
             return default;
         }
@@ -37,14 +39,14 @@ namespace kaloriräknarapp
         public void AddMat(Maträtt M)
         {
             maträtter.Add(M);
-            Console.WriteLine("Du har lagt till " + M.namn + " i " + namn);
+            Console.WriteLine("Du har lagt till " + M.Namn + " i " + Namn);
         }
 
         public string RäknaKalorier() {
 
             foreach (Maträtt mat in maträtter)
             {
-                Totalkal = Totalkal + mat.kalorier;
+                Totalkal = Totalkal + mat.Kalorier;
             }
             return "Totala kalorier: " + Totalkal;
              //Console.WriteLine("Totala kalorier: " + Totalkal);
