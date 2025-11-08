@@ -4,9 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Xml.Serialization;
+using DataAccess;
+using Models;
 
-
-namespace PresentationLayer
+namespace BL
 {
     internal class Serialiserare<T>
     {
@@ -27,7 +28,7 @@ namespace PresentationLayer
             }
         }
 
-        public T DeSerialisera()
+        public T? DeSerialisera()
         {
             XmlSerializer serie = new XmlSerializer(typeof(T));
 

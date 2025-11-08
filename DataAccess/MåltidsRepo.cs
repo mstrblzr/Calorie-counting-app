@@ -3,10 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using BL;
 using Models;
 
-namespace DAL
+namespace DataAccess
 {
     public class MåltidsRepo : IRepository<Måltid>
     {
