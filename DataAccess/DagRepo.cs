@@ -7,13 +7,13 @@ using Models;
 
 namespace DataAccess
 {
-    internal class DagRepo : IRepository<Dag>
+    public class DagRepo : IRepository<Dag>
     {
         public List<Dag> DagsLista;
 
         public DagRepo()
         {
-
+            DagsLista = new List<Dag>();
         }
 
         public void Add(Dag dag)

@@ -28,12 +28,13 @@ namespace Models
         }
         public string GetMat()
         {
+            string resultat = "";
             foreach (Maträtt mat in maträtter)
             {
                 //Console.WriteLine(mat.Namn);
-                return mat.Namn;
+                resultat += mat.Namn;
             }
-            return default;
+            return resultat;
         }
 
         public void AddMat(Maträtt M)

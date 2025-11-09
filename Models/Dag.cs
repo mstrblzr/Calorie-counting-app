@@ -13,15 +13,12 @@ namespace Models
         public int Id;
         public Dag(int id, List<Måltid> måltidsrepo, DateTime datum)
         {
-            foreach (Måltid måltid in måltidsrepo)
-            {
-                
-                
-                    allamåltider.Add(måltid);
-                
-            }
             this.date1 = datum;
             this.Id = id;
+            foreach (Måltid måltid in måltidsrepo)
+            {
+                    allamåltider.Add(måltid);
+            }
         }
         
         public Dag()
@@ -33,12 +30,26 @@ namespace Models
         //    allamåltider.Add(frukost, lunch, middag, mellanmål);
         //}
 
-        public void SkrivUtLista()
+        public List<Måltid>? SkrivUtLista()
         {
+            return allamåltider;
+            //foreach (Måltid m in allamåltider)
+            //{
+            //    //Console.WriteLine(m.Namn + ": " + m.GetMat() + m.RäknaKalorier());
+            //    return m.Namn + " : " + m.GetMat() + m.RäknaKalorier();
+            //}
+            //return null;
+        }
+
+        public string? SkrivUtLista2()
+        {
+            string resultat = "";
             foreach (Måltid m in allamåltider)
             {
-                Console.WriteLine(m.Namn + ": " + m.GetMat() + m.RäknaKalorier());
+                //Console.WriteLine(m.Namn + ": " + m.GetMat() + m.RäknaKalorier());
+                resultat += m.Namn + " : " + m.GetMat() + m.RäknaKalorier();
             }
+            return resultat;
         }
     }
 }
