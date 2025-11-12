@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MongoDB.Bson.Serialization.Attributes;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,6 +9,7 @@ namespace Models
 {
     public class Måltid
     {
+        [BsonId]
         public int Id { get; set; }
         public string Namn { get; set; }
         public int Totalkal { get; set; }

@@ -12,6 +12,7 @@ namespace BL
     {
         public Dag idag;
         IRepository<Dag>? dagsrepo;
+        public MongoDBSerializer mongotest = new MongoDBSerializer();
         public LaddaModeller()
         {
             IRepository<Maträtt>? maträttsrepo = new MaträttsRepo();
@@ -46,9 +47,17 @@ namespace BL
 
 
             Console.WriteLine(idag.date1 + idag.SkrivUtLista2());
-
+            //mongotest.AddSingle(mat2);
+            //mongotest.AddSingle(mat3);
+            //mongotest.UpdateMany(maträttsrepo.GetAll());
+            mongotest.Delete(mat1);
+            
+            Console.WriteLine(mongotest.Open(1).Namn);
 
         }
+        
+
+        
 
         public string SkrivUtDag()
         {
